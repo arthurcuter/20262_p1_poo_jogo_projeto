@@ -12,6 +12,46 @@ public class Heroina {
     private int mascaras;
     private int seda;
 
+    void atacar () {
+        if(seda < 9) seda++;
+        System.out.println(nome+" ataca com a agulha!");
+    }
+
+    void atacar (int vezes) {
+        for(int i = 1; i <= vezes; i++) {
+            atacar();
+        }
+    }
+
+    void receberDano(int dano) {
+        if((mascaras - dano) < 1) {
+            mascaras = MASCARAS_MINIMAS_PADRAO;
+        } else {
+            mascaras -= dano;
+        }
+        System.out.println(nome + " recebeu "+dano+" de dano");
+    }
+    
+    void curar() {
+        if(seda == SEDA_MAXIMA_PADRAO) {
+            if((mascaras + 3) > MASCARAS_MAXIMAS_PADRAO) {
+                mascaras = MASCARAS_MAXIMAS_PADRAO;
+            } else {
+                mascaras += 3;
+            }
+            seda = SEDA_MINIMA_PADRAO;
+            System.out.printf("%s se amarrou com seda e recuperou mascaras\n", nome);
+        }
+        System.out.println(nome+"nao tem seda suficiente para se curar");
+    }
+
+    boolean estaDerrotada() {
+        if(mascaras == 0) {
+            return true;
+        }
+        return false;
+    }
+
     Heroina (String nome) {
         mascaras = MASCARAS_PADRAO;
         seda = SEDA_PADRAO;
