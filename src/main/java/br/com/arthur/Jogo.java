@@ -9,6 +9,11 @@ public class Jogo {
         System.out.println("      edicao POO em Java         ");
         System.out.println("=================================");
         System.out.println("Carregando save de "+nome+"...");
+
+        Heroina heroina1 = new Heroina("Hornet");
+
+        System.out.printf("%s\n", heroina1.toString());
+
     }
     
 }
