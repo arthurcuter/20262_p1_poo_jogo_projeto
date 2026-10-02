@@ -29,7 +29,7 @@ public class Heroina {
         } else {
             mascaras -= dano;
         }
-        System.out.println(nome + " recebeu "+dano+" de dano");
+        System.out.println(nome + " recebeu "+dano+" de dano.");
     }
     
     void curar() {
@@ -40,9 +40,10 @@ public class Heroina {
                 mascaras += 3;
             }
             seda = SEDA_MINIMA_PADRAO;
-            System.out.printf("%s se amarrou com seda e recuperou mascaras\n", nome);
+            System.out.printf("%s se amarrou com seda e recuperou mascaras.\n", nome);
+        } else {
+            System.out.println(nome+" nao tem seda suficiente para se curar.");
         }
-        System.out.println(nome+"nao tem seda suficiente para se curar");
     }
 
     boolean estaDerrotada() {
@@ -72,7 +73,7 @@ public class Heroina {
 
     @Override 
     public String toString () {
-        return String.format("%s | Mascaras: %d/%d | Seda: %d/%d", 
+        return String.format("%s | Mascaras: %d/%d | Seda: %d/%d\n", 
         nome, mascaras, MASCARAS_MAXIMAS_PADRAO, seda, SEDA_MAXIMA_PADRAO);
     }
     
