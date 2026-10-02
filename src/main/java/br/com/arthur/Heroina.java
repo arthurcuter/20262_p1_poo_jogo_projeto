@@ -1,5 +1,9 @@
 package br.com.arthur;
 
+import lombok.Getter;
+
+@Getter
+
 public class Heroina {
     private static final int MASCARAS_MAXIMAS_PADRAO = 5;
     private static final int MASCARAS_MINIMAS_PADRAO = 0;
@@ -57,18 +61,6 @@ public class Heroina {
         mascaras = MASCARAS_PADRAO;
         seda = SEDA_PADRAO;
         this.nome = nome;
-    }
-
-    public String getNome () {
-        return nome;
-    }
-    
-    public int getMascaras () {
-        return mascaras;
-    }
-
-    public int getSeda () {
-        return seda;
     }
 
     @Override 
